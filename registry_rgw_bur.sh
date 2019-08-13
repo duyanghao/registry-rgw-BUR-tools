@@ -32,7 +32,6 @@ wait_finished() {
 			echo -e "waiting ..."
 			sleep 5
 		else
-			echo -e "finished!"
 			break
 		fi
 	done
@@ -62,7 +61,7 @@ registry_rgw_upload() {
 	wait_finished "s3cmd sync"
 	end=`date +%s`
 	runtime=$((end-start))
-	echo -e "${OK} upload registry successfully, and time taken: $runtime seconds"
+	echo -e "${OK} upload registry finished, and time taken: $runtime seconds"
 }
 
 registry_rgw_download() {
@@ -89,7 +88,7 @@ registry_rgw_download() {
 	wait_finished "s3cmd sync"
 	end=`date +%s`
 	runtime=$((end-start))
-	echo -e "${OK} download registry finished, and time token: $runtime seconds"
+	echo -e "${OK} download registry finished, and time taken: $runtime seconds"
 }
 
 main() {
