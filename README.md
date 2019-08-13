@@ -43,7 +43,7 @@ bash start.sh upload $rgw_bucket $concurrent
 after `upload` registry rgw data, you need to check for success as below:
 
 ```bash
-bash registry_rgw_upload_check.sh $rgw_bucket
+bash registry_rgw_upload_check.sh
 ```
 And the result will show as below:
 
