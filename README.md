@@ -6,7 +6,7 @@ registry-rgw-BUR-tools is a concurrent [s3cmd](https://github.com/s3tools/s3cmd)
 
 Normally, we use s3cmd tool to do BUR(backup and restore) for registry rgw data, which is inefficient especially When massive data is involved because `s3cmd tool` is not concurrent itself.
 
-So we need to execute multiple s3cmd by spliting registry rgw data in order to speed up, and `registry-rgw-BUR-tools` helps to do this.
+So we need to execute s3cmd concurrently by spliting registry rgw data in order to speed up, and `registry-rgw-BUR-tools` helps to do this.
 
 ## Prerequisites
 
