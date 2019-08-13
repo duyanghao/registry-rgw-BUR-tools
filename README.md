@@ -22,24 +22,35 @@ So we need to execute multiple s3cmd by spliting registry rgw data in order to s
 ```bash
 bash start.sh download $rgw_bucket $concurrent
 ```
+after `download` registry rgw data, you need to check for success as below:
+
+```bash
+bash registry_rgw_download_check.sh $rgw_bucket
+```
+And the result will show as below:
+
+```bash
+# bash registry_rgw_download_check.sh tmpbucket
+download registry rgw blobs successfully
+download registry rgw repositories successfully
+```
 
 * upload registry rgw data
 
 ```bash
 bash start.sh upload $rgw_bucket $concurrent
 ```
-
-after `download` or `upload` registry rgw data, you need to check for success as below:
+after `upload` registry rgw data, you need to check for success as below:
 
 ```bash
-bash check.sh $rgw_bucket
+bash registry_rgw_upload_check.sh $rgw_bucket
 ```
 And the result will show as below:
 
 ```bash
-# bash check.sh tmpbucket
-upload blobs successfully
-upload repositories failure
+# bash registry_rgw_upload_check.sh 
+upload registry rgw blobs successfully
+upload registry rgw repositories failure
 ```
 
 ## Refs
