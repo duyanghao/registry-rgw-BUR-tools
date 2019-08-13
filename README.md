@@ -6,7 +6,14 @@ registry-rgw-BUR-tools is a concurrent [s3cmd](https://github.com/s3tools/s3cmd)
 
 Normally, we use s3cmd tool to do BUR(backup and restore) for registry rgw data, which is inefficient especially When massive data is involved because `s3cmd tool` is not concurrent itself.
 
-So wo need to execute multiple s3cmd by spliting registry rgw data in order to speed up, and `registry-rgw-BUR-tools` helps to do this.
+So we need to execute multiple s3cmd by spliting registry rgw data in order to speed up, and `registry-rgw-BUR-tools` helps to do this.
+
+## Prerequisites
+
+### Software
+|Software|Version|Description|
+|---|---|---|
+|s3cmd|version 2.0.2 or higher|Note that you need to configure s3cmd in `/root/.s3cfg`|
 
 ## Usage
 
@@ -34,3 +41,7 @@ And the result will show as below:
 upload blobs successfully
 upload repositories failure
 ```
+
+## Refs
+
+* [ERROR: Parameter problem: Destination must be a directory](https://github.com/s3tools/s3cmd/issues/886)
